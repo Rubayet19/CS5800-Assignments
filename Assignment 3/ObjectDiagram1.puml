@@ -1,0 +1,18 @@
+@startuml
+object "<u>ship1:Ship</u>" as s1{
+shipName: "SS Minnow"
+yearBuilt: "1978"
+}
+object "<u>cargoShip1:CargoShip</u>" as s2{
+shipName: "SS Minnow"
+yearBuilt: "1978"
+}
+object "<u>cruiseShip1:CruiseShip</u>" as s3{
+shipName: "SS Minnow"
+yearBuilt: "1978"
+}
+
+s1  <|-- s2
+s1  <|-- s3
+
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+title Part 4
+
+class Folder {
+- name: String (private)
+- subfolders: ArrayList<Folder> (private)
+- files: ArrayList<File> (private)
++ Folder(): Constructor
++ getName(): String
++ setName(String): void
++ addSubfolder(String): void
++ removeSubfolder(String): void
++ getSubfolder(String): Folder
++ addFile(String): void
++ removeFile(File): boolean
++ toString(): String
++ printFolderContents(): void
+}
+
+class File {
+- name: String (private)
++ File(String): Constructor
++ getName(): String
++ setName(String): void
++ toString(): String
+
+}
+
+Folder "0..*" *-- "1" File: belongs to
+@enduml

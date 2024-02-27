@@ -1,0 +1,52 @@
+@startuml
+title Part 3
+
+class Instructor {
+firstName: String
+lastName: String
+officeNumber: String
++ getFirstName(): String
++ setFirstName(String): void
++ getLastName(): String
++ setLastName(String): void
++ getOfficeNumber(): String
++ setOfficeNumber(String): void
++ toString(): String
+}
+class Textbook {
+Attributes:
+title: String
+author: String
+publisher: String
+Methods:
++ getTitle(): String
++ setTitle(String): void
++ getAuthor(): String
++ setAuthor(String): void
++ getPublisher(): String
++ setPublisher(String): void
++ toString(): String
+
+}
+class Course {
+Attributes:
+name: String
+instructors: ArrayList<Instructor>
+textbooks: ArrayList<Textbook>
+Methods:
++ Course()
++ getName(): String
++ setName(String): void
++ getInstructors(): ArrayList<Instructor>
++ setInstructor(Instructor): void
++ getTextbooks(): ArrayList<Textbook>
++ setTextbook(Textbook): void
++ toString(): String
++ printCourse(): void
+
+}
+
+Course "1..*" o-- "1..*" Instructor
+Course "1..*" o-- "1..*" Textbook
+
+@enduml

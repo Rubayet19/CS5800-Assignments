@@ -1,0 +1,30 @@
+@startuml
+title Part 2
+
+interface Ship {
+    # shipName: String
+    # yearBuilt: String
+    + getShipName(): String
+    + setShipName(String): void
+    + getYearBuilt(): String
+    + setYearBuilt(String): void
+    + toString(): String
+    + printShip(): void
+}
+class CargoShip {
+# cargoCapacityInTonnage: int
++ getCargoCapacityInTonnage(): int
++ setCargoCapacityInTonnage(int): void
++ toString(): String
+}
+class CruiseShip {
+# maxNumberPassengers: int
++ getMaxNumberPassengers(): int
++ setMaxNumberPassengers(int): void
++ toString(): String
+}
+
+Ship <|-- CargoShip: type of
+Ship <|-- CruiseShip: variant of
+
+@enduml
