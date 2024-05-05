@@ -1,0 +1,61 @@
+@startuml
+
+object "<u>document:Document</u>" as doc {
+  characters = List of Characters
+}
+
+object "<u>charH:Character</u>" as ch1 {
+  character = 'H'
+  characterProperty = Reference to CharacterProperties (Modified)
+}
+
+object "<u>charW:Character</u>" as ch2 {
+  character = 'W'
+  characterProperty = Reference to CharacterProperties (Modified)
+}
+
+object "<u>charE:Character</u>" as ch3 {
+  character = 'e'
+  characterProperty = Reference to CharacterProperties
+}
+
+object "<u>charL:Character</u>" as ch4 {
+  character = 'l'
+  characterProperty = Reference to CharacterProperties
+}
+
+object "<u>arialProperties:CharacterProperties</u>" as cp1 {
+  font = Arial
+  color = Black
+  size = 14
+}
+
+object "<u>calibriModifiedProperties:CharacterProperties</u>" as cp3 {
+  font = Calibri
+  color = Blue
+  size = 99
+}
+
+object "<u>verdanaProperties:CharacterProperties</u>" as cp2 {
+  font = Verdana
+  color = Red
+  size = 12
+}
+
+object "<u>propertiesFactory:CharacterPropertiesFactory</u>" as cpf {
+  flyweights = Map of CharacterProperties
+}
+
+doc *-- ch1
+doc *-- ch2
+doc *-- ch3
+doc *-- ch4
+ch1 *-- cp3
+ch2 *-- cp3
+ch3 *-- cp1
+ch4 *-- cp1
+cpf *-- cp1
+cpf *-- cp2
+cpf *-- cp3
+
+@enduml
