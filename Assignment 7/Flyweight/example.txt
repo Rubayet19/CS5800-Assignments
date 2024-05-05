@@ -1,0 +1,3 @@
+l,Calibri,Blue,74
+o,Arial,Red,12
+W,Calibri,Blue,43
